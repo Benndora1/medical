@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="medical_report_form" model="ir.ui.view">
+    <field name="name"></field>
+    <field name="model">medical.form</field>
+    <field name="arch" type="xml">
+      <form string="Medical Form">
+        <sheet>
+          <group string="MEDICAL REPORT – DR/ PHYSICIAN">
+            <group string="TO BE COMPLETED BY A REGISTERED MEDICAL CENTRE, PLACED IN AN ENVELOPE, SEALED AND STAMPED" >
+              <field name="name" />
+              <field name="d_o_b" />
+              <field name="blood_pressure" />
+              <separator string="Please indicate your observation on each of the following areas:-" />
+              <separator string="REQUIRED LABORATORY TESTS/INFORMATION" />
+              <separator string="Please indicate the status of result o the follow:-" />
+              <field name="tuberculosis"/>
+              <field name="whopping" />
+              <field name="tetanus" />
+              <field name="diabetes"/>
+              <field name="polio" />
+              <field name="diptheria" />
+              <field name="hepatitis" />
+            </group>
+          </group>
+            <group string="Please indicate your observation on each of the following areas:-">
+             
+                <field name="mouth_throat" />
+              <field name="eyes_ears" />
+              <field name="neck_head" />
+              <field name="skin" />
+              <field name="chest_lungs" />
+              <field name="heart_blood_vessel" />
+              <field name="digestive_system" />
+              <field name="nervous" />
+              <field name="muscular_system" />
+              <field name="reproductive_system" />
+              <field name="others" />
+              <field  name="other_comments"/>
+             </group>
+        <group string="GENERAL OBSERVATION AND DECLARATION BY DR/PHYSICIAN">
+          <group string="I, Doctor________________________
+          certify that the above information is correct, that the general state of
+          health, physical and mental condition of the applicant is good and can undertake training in a hospitality college.
+          Date:____________________________________________
+          Doctor’s Signature and Stamp_______________________" colspan="4">
+          
+              </group>
+        </group>
+        </sheet>
+        <footer>
+      </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="medical_action" model="ir.actions.act_window">
+    <field name="name">Medical Report</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">medical.form</field>
+    <field name="view_mode">form,tree</field>
+    <field name="help" type="html">
+      <p>
+        <strong>Medical Report</strong>
+      </p>
+    </field>
+  </record>
+
+
+  <menuitem id="medical_report_root" name="Medical Form" sequence="1" />
+
+  <menuitem id="medical_report_root_safety_health" action="medical_action" name="Medical Form" sequence="1" /> 
+</odoo>
